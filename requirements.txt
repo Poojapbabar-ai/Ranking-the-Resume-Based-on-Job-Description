@@ -4,3 +4,4 @@ pandas
 numpy
 PyPDF2
 docx2txt
+en-core-web-sm
