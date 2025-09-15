@@ -6,8 +6,14 @@ import pandas as pd
 import streamlit as st
 from sentence_transformers import SentenceTransformer, util
 
-import spacy.cli
-spacy.cli.download("en_core_web_sm")
+import streamlit as st
+
+@st.cache_resource
+def load_model():
+    spacy.cli.download("en_core_web_sm")
+    return spacy.load("en_core_web_sm")
+
+nlp = load_model()
 # -------------------------------
 # Load models
 # -------------------------------
