@@ -13,6 +13,7 @@ from sentence_transformers import SentenceTransformer, util
 @st.cache_resource
 def load_spacy_model():
     try:
+        import spacy.cli
         spacy.cli.download("en_core_web_sm")
         return spacy.load("en_core_web_sm")
     except Exception as e:
